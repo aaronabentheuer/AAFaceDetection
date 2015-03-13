@@ -65,4 +65,4 @@ The included example uses a bunch of the features and uses it to map emojis to t
 
 ![screencast](https://github.com/aaronabentheuer/AAFaceDetection/blob/master/screencast.gif)
 
-It's a very simple project that hopefully demonstrates the gist of using "AAFaceDetection/Visage" and is well commented. If you have any questions don't hesitate contacting me [@aaronabentheuer](twitter.com/aaronabentheuer).
+It's a very simple project that hopefully demonstrates the gist of using "AAFaceDetection/Visage" and is well commented. If you have any questions don't hesitate contacting me [@aaronabentheuer](http://www.twitter.com/aaronabentheuer).
