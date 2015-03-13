@@ -24,6 +24,7 @@ class ViewController: UIViewController {
         //If you enable "onlyFireNotificationOnStatusChange" you won't get a continuous "stream" of notifications, but only one notification once the status changes.
         visage!.onlyFireNotificatonOnStatusChange = false
         
+        
         //You need to call "beginFaceDetection" to start the detection, but also if you want to use the cameraView.
         visage!.beginFaceDetection()
         

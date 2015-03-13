@@ -12,22 +12,34 @@
 	<dict>
 		<key>0B0B95484AD488B8C39195A6DAF9FB3BE1F8A511</key>
 		<string>https://github.com/aaronabentheuer/Visage.git</string>
+		<key>40D912770F74B782D271F42DA80123F1A9C2226A</key>
+		<string>https://github.com/aaronabentheuer/AAFaceDetection.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>FaceDetection.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>0B0B95484AD488B8C39195A6DAF9FB3BE1F8A511</key>
+		<string>../../../Visage</string>
+		<key>40D912770F74B782D271F42DA80123F1A9C2226A</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/aaronabentheuer/Visage.git</string>
+	<string>https://github.com/aaronabentheuer/AAFaceDetection.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>0B0B95484AD488B8C39195A6DAF9FB3BE1F8A511</string>
+	<string>40D912770F74B782D271F42DA80123F1A9C2226A</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>40D912770F74B782D271F42DA80123F1A9C2226A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>AAFaceDetection</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

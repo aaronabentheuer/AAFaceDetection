@@ -23,14 +23,14 @@ class Visage: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
         case FaceTimeCamera
     }
     
-    var onlyFireNotificatonOnStatusChange : Bool?
+    var onlyFireNotificatonOnStatusChange : Bool = true
     var visageCameraView : UIView = UIView()
     
     //Private properties of the detected face that can be accessed (read-only) by other classes.
     private(set) var faceDetected : Bool?
     private(set) var faceBounds : CGRect?
-    private(set) var faceAngle : Float?
-    private(set) var faceAngleDifference : Float?
+    private(set) var faceAngle : CGFloat?
+    private(set) var faceAngleDifference : CGFloat?
     private(set) var leftEyePosition : CGPoint?
     private(set) var rightEyePosition : CGPoint?
     
@@ -165,12 +165,12 @@ class Visage: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
                 if (feature.hasFaceAngle) {
                     
                     if (faceAngle != nil) {
-                        faceAngleDifference = feature.faceAngle - faceAngle!
+                        faceAngleDifference = CGFloat(feature.faceAngle) - faceAngle!
                     } else {
-                        faceAngleDifference = feature.faceAngle
+                        faceAngleDifference = CGFloat(feature.faceAngle)
                     }
                     
-                    faceAngle = feature.faceAngle
+                    faceAngle = CGFloat(feature.faceAngle)
                 }
                 
                 if (feature.hasLeftEyePosition) {
