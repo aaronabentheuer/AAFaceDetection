@@ -6,7 +6,7 @@ Approachable implementation of iOS FaceDetection with CIDetector for prototyping
 Although face-recognition was first introduced to the platform by Apple in iOS 5, we haven't seen much creative use of this quite interesting feature, especially on live video. This technology is especially interesting for prototyping experimental user-interfaces that make use of the user's emotion (smiling, blinking or winking) or detect the user's attention (whether he is looking at the screen or not). That's why I wanted to make it as easy as possible to prototype those interactions with a simple model based on NSNotification whenever the status of the user's face changes. All the main features of Apples CIDetector(ofType: CIDetectorTypeFace…) are implemented and can be easily accessed.
 
 ###Usage
-To start using "AAFaceDetection/Visage" just drag the "Visage".swift" file into your project folder.
+To start using "AAFaceDetection/Visage" just drag the "Visage.swift" file into your project folder.
 
 Visage is instantiated by passing a camera-position and a optimization setting for performance like this:
 ```
@@ -41,4 +41,23 @@ You can subscribe to these events by using one of the provided methods `NSNotifi
 By default these notifications are fired only when the status changes. There is however the option to receive a continuous stream of notifications, which may be handy for some purposes, which can be activated by setting `        visage!.onlyFireNotificatonOnStatusChange = false`. 
 Keep in mind that this setting will likely decrease performance.
 
-Visage also provides a previewView of the camera-image as this is something you would often want. Just add it to your view hierarchy like this: `self.view.addSubview(visage!.visageCameraView)`.
+Visage provides a bunch of properties:
+* `faceDetected : Bool?` whether there has been a face detected.
+* `faceBounds : CGRect?` the position and size of the face in pixels on screen.
+* `faceAngle : CGFloat?` the absolute angle of the face in radians.
+* `faceAngleDifference : CGFloat?` the relative angle of the the face (to the previous one) in radians.
+* `leftEyePosition : CGPoint?` the position of the left eye on screen.
+* `rightEyePosition : CGPoint?` the position of the right eye on screen.
+* `mouthPosition : CGPoint?` the position of the mouth on screen.
+* `hasSmile : Bool?` whether there has been a smile detected.
+* `isWinking : Bool?` whether there has been a wink detected.
+* `isBlinking : Bool?` whether there has been a blink detected.
+* `leftEyeClosed : Bool?` whether the left eye is closed or not.
+* `rightEyeClosed : Bool?`whether the right eye is closed or not.
+
+Visage also provides a previewView of the camera-image as this is something you might want.
+Just add it to your view hierarchy like this: `self.view.addSubview(visage!.visageCameraView)`.
+
+###Example Project
+The included example uses a bunch of the features and uses it to map emojis to the user's current facial expression.
+It's a very simple project that hopefully demonstrates the gist of using "AAFaceDetection/Visage" and is well commented. If you have any questions don't hesitate contacting me via Twitter [@aaronabentheuer](twitter.com/aaronabentheuer).
