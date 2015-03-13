@@ -1,4 +1,4 @@
-Visage
+AAFaceDetection: Visage
 ===============
 Convenient implementation of iOS FaceDetection with CIDetector(ofType: CIDetectorTypeFace…).
 
