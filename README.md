@@ -10,7 +10,7 @@ Although face-recognition was first introduced to the platform by Apple in iOS 5
 ###Usage
 To start using "AAFaceDetection/Visage" just drag the "Visage.swift" file into your project folder.
 
-Visage is instantiated by passing a camera-position and a optimization setting for performance like this:
+Visage is instantiated by passing a camera-position and an optimization setting for performance like this:
 ```
 let visage = Visage(cameraPosition: Visage.CameraDevice.FaceTimeCamera, optimizeFor: Visage.DetectorAccuracy.HigherPerformance)
 ```
