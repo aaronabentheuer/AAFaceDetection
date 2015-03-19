@@ -60,11 +60,9 @@ Visage also provides a previewView of the camera-image as this is something you 
 Just add it to your view hierarchy like this: `self.view.addSubview(visage!.visageCameraView)`.
 
 ##Example Project
-The included example uses a bunch of the features and uses it to map emojis to the user's current facial expression.
+The very simple example project hopefully demonstrates the gist of using "AAFaceDetection/Visage" and is thoroughly commented. If you have any questions don't hesitate contacting me [@aaronabentheuer](http://www.twitter.com/aaronabentheuer).
 
 ![screencast](https://github.com/aaronabentheuer/AAFaceDetection/blob/master/screencast.gif)
-
-It's a very simple project that hopefully demonstrates the gist of using "AAFaceDetection/Visage" and is well commented. If you have any questions don't hesitate contacting me [@aaronabentheuer](http://www.twitter.com/aaronabentheuer).
 
 ##License
 Released under the **MIT License**.
