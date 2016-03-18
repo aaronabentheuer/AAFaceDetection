@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         visage!.beginFaceDetection()
         
         //This is a very simple cameraView you can use to preview the image that is seen by the camera.
-        var cameraView = visage!.visageCameraView
+        let cameraView = visage!.visageCameraView
         self.view.addSubview(cameraView)
         
         let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Light))

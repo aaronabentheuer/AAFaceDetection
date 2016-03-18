@@ -74,7 +74,7 @@ class Visage: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
         case .ISightCamera : self.captureSetup(AVCaptureDevicePosition.Back)
         }
         
-        var faceDetectorOptions : [NSString : NSString]?
+        var faceDetectorOptions : [String : AnyObject]?
         
         switch optimizeFor {
         case .BatterySaving : faceDetectorOptions = [CIDetectorAccuracy : CIDetectorAccuracyLow]
@@ -107,7 +107,13 @@ class Visage: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
             captureDevice = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
         }
         
-        var deviceInput : AVCaptureDeviceInput = AVCaptureDeviceInput(device: captureDevice, error: &captureError)
+        var deviceInput : AVCaptureDeviceInput?
+        do {
+            deviceInput = try AVCaptureDeviceInput(device: captureDevice)
+        } catch let error as NSError {
+            captureError = error
+            deviceInput = nil
+        }
         captureSession.sessionPreset = AVCaptureSessionPresetHigh
         
         if (captureError == nil) {
@@ -116,7 +122,7 @@ class Visage: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
             }
             
             self.videoDataOutput = AVCaptureVideoDataOutput()
-            self.videoDataOutput!.videoSettings = [kCVPixelBufferPixelFormatTypeKey: kCVPixelFormatType_32BGRA]
+            self.videoDataOutput!.videoSettings = [kCVPixelBufferPixelFormatTypeKey: Int(kCVPixelFormatType_32BGRA)]
             self.videoDataOutput!.alwaysDiscardsLateVideoFrames = true
             self.videoDataOutputQueue = dispatch_queue_create("VideoDataOutputQueue", DISPATCH_QUEUE_SERIAL)
             self.videoDataOutput!.setSampleBufferDelegate(self, queue: self.videoDataOutputQueue!)
@@ -127,25 +133,25 @@ class Visage: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
         }
         
         visageCameraView.frame = UIScreen.mainScreen().bounds
-        
-        var previewLayer: AVCaptureVideoPreviewLayer = AVCaptureVideoPreviewLayer.layerWithSession(captureSession) as! AVCaptureVideoPreviewLayer
+		
+		let previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         previewLayer.frame = UIScreen.mainScreen().bounds
         previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
         visageCameraView.layer.addSublayer(previewLayer)
     }
     
-    var options : [NSObject : AnyObject]?
+    var options : [String : AnyObject]?
     
     //MARK: CAPTURE-OUTPUT/ANALYSIS OF FACIAL-FEATURES
     func captureOutput(captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, fromConnection connection: AVCaptureConnection!) {
         
         let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer)
-        let opaqueBuffer = Unmanaged<CVImageBuffer>.passUnretained(imageBuffer).toOpaque()
+        let opaqueBuffer = Unmanaged<CVImageBuffer>.passUnretained(imageBuffer!).toOpaque()
         let pixelBuffer = Unmanaged<CVPixelBuffer>.fromOpaque(opaqueBuffer).takeUnretainedValue()
         let sourceImage = CIImage(CVPixelBuffer: pixelBuffer, options: nil)
         options = [CIDetectorSmile : true, CIDetectorEyeBlink: true, CIDetectorImageOrientation : 6]
         
-        var features = self.faceDetector!.featuresInImage(sourceImage, options: options)
+        let features = self.faceDetector!.featuresInImage(sourceImage, options: options)
         
         if (features.count != 0) {
             
