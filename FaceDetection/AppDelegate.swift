@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         window!.clipsToBounds = true
         
-        var animation : CABasicAnimation = CABasicAnimation(keyPath: "cornerRadius")
+        let animation : CABasicAnimation = CABasicAnimation(keyPath: "cornerRadius")
         animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
         animation.fromValue = activeCornerRadius
         animation.toValue = activeCornerRadius
@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationWillResignActive(application: UIApplication) {
-        var animation : CABasicAnimation = CABasicAnimation(keyPath: "cornerRadius")
+        let animation : CABasicAnimation = CABasicAnimation(keyPath: "cornerRadius")
         animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
         animation.fromValue = activeCornerRadius
         animation.toValue = incativeCornerRadius
@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationDidBecomeActive(application: UIApplication) {
-        var animation : CABasicAnimation = CABasicAnimation(keyPath: "cornerRadius")
+        let animation : CABasicAnimation = CABasicAnimation(keyPath: "cornerRadius")
         animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
         animation.fromValue = incativeCornerRadius
         animation.toValue = activeCornerRadius

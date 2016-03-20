@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "40D912770F74B782D271F42DA80123F1A9C2226A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "40D912770F74B782D271F42DA80123F1A9C2226A" : 0,
+    "0B0B95484AD488B8C39195A6DAF9FB3BE1F8A511" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "1767FBA5-AB45-4A53-A8D7-767E6A8692B3",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "40D912770F74B782D271F42DA80123F1A9C2226A" : "AAFaceDetection",
+    "0B0B95484AD488B8C39195A6DAF9FB3BE1F8A511" : "Visage"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "FaceDetection",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "FaceDetection.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/aaronabentheuer\/Visage.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0B0B95484AD488B8C39195A6DAF9FB3BE1F8A511"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/aaronabentheuer\/AAFaceDetection.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "40D912770F74B782D271F42DA80123F1A9C2226A"
+    }
+  ]
+}
